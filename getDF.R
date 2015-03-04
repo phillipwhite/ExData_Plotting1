@@ -18,7 +18,7 @@ getDF <- function() {
 		}
 	}
 	
-	# unzipo the zipfile, if necessary
+	# unzip the zipfile, if necessary
 	txtfile <- "household_power_consumption.txt"
 	if (!file.exists(txtfile)) {
 		unzip(zipfile)
@@ -32,7 +32,10 @@ getDF <- function() {
 
 	# read in the filtered data from short_textfile
 	short_txtfile <- paste("short_", txtfile, sep = "")
+	
+	# if the short_txtfile has not already been created,
 	if (!file.exists(short_txtfile)) {
+		# then create short_txtfile
 		
 		# read the txtfile filtered to have only those rows
 		#    where the Date is 1/2/2007 or 2/2/2007
@@ -44,8 +47,7 @@ getDF <- function() {
 		# save the filtered data to short_textfile
 		write.table(df, file = short_txtfile, sep = ";", row.names= FALSE)		
 		
-	} else {
-		
+	} else {		
 		# read the filtered data from short_textfile
 		df <- read.table(file = short_txtfile, sep=";", 
 				 header=TRUE, stringsAsFactors = FALSE)			
@@ -53,7 +55,8 @@ getDF <- function() {
 	} 
 	
 	# add a column for datetime, using Date and Time
-	df$datetime <- strptime(paste(df$Date, df$Time), "%d/%m/%Y %H:%M:%S")
+	df$datetime <- strptime(x = paste(df$Date, df$Time), 
+				format = "%d/%m/%Y %H:%M:%S")
 	
 	# return value is the dataframe
 	df
