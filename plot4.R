@@ -92,22 +92,25 @@ getDF <- function() {
 plot4 <- function() {
 	png("plot4.png")      # draw to a png file 
 			      # - using default size of 480 x 480 pixels
+
 	par(mfrow = c(2, 2))  # prepare to make 4 plots in 2 x 2 array
 	
 	with(getDF(), {       # read in the data
 		
-		# Upper left plot
+		# Upper Left plot
 		plot(x = datetime, 
 		     y = Global_active_power, 
 		     type="l", 
 		     xlab = "",
 		     ylab = "Global Active Power")
+
 		
 		
 		# Upper Right plot
 		plot(x = datetime, 
 		     y = Voltage, 
 		     type = "l")		
+
 		
 		
 		# Lower Left plot, with three lines and a legend
@@ -130,6 +133,7 @@ plot4 <- function() {
 		       	   	"Sub_metering_2",
 	       	   		"Sub_metering_3"),
 		       col = c("black", "red", "blue"))
+
 		
 		
 		# Lower Right plot
@@ -138,6 +142,6 @@ plot4 <- function() {
 		     type = "l")
 		
 	})
-	par(mfrow = c(1, 1))
+	par(mfrow = c(1, 1))   # restore 1 x 1 plotting
 	dev.off()
 }

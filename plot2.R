@@ -92,6 +92,7 @@ getDF <- function() {
 plot2 <- function() {
 	png("plot2.png")  # draw to a png file
 			  # - using default size 480 x 480 pixels
+	
 	with(getDF(), {   # read in the data
 		
 		# plot the data as a line

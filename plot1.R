@@ -92,6 +92,7 @@ getDF <- function() {
 plot1 <- function() {
 	png("plot1.png")  # draw to a png file
 			  # - using default size 480 x 480 pixels
+	
 	with(getDF(), {   # read in the data
 		
 		# then plot the histogram with the data
