@@ -90,7 +90,8 @@ getDF <- function() {
 ## Function to produce Plot 4  ##
 #################################
 plot4 <- function() {
-# 	png("plot4.png")      # draw to a png file
+	png("plot4.png")      # draw to a png file 
+			      # - using default size of 480 x 480 pixels
 	par(mfrow = c(2, 2))  # prepare to make 4 plots in 2 x 2 array
 	
 	with(getDF(), {       # read in the data
@@ -137,5 +138,6 @@ plot4 <- function() {
 		     type = "l")
 		
 	})
-# 	dev.off()
+	par(mfrow = c(1, 1))
+	dev.off()
 }

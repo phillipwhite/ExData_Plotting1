@@ -90,7 +90,8 @@ getDF <- function() {
 ## Function to produce Plot 3  ##
 #################################
 plot3 <- function() {
-# 	png("plot3.png")  # draw to a png file
+	png("plot3.png")  # draw to a png file
+			  # - using default size of 480 x 480 pixels
 	with(getDF(), {   # read in the data
 		
 		# draw three lines and a legend
@@ -119,5 +120,5 @@ plot3 <- function() {
 		       	   	"Sub_metering_3"),
 		       col = c("black", "red", "blue"))
 	})
-# 	dev.off()
+	dev.off()
 }

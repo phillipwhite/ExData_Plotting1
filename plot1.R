@@ -90,7 +90,8 @@ getDF <- function() {
 ## Function to produce Plot 1  ##
 #################################
 plot1 <- function() {
-# 	png("plot1.png")  # draw to a png file
+	png("plot1.png")  # draw to a png file
+			  # - using default size 480 x 480 pixels
 	with(getDF(), {   # read in the data
 		
 		# then plot the histogram with the data
@@ -100,5 +101,5 @@ plot1 <- function() {
 		     ylab = "Frequency", 
 		     col = "red")
 	})
-# 	dev.off()
+	dev.off()
 }

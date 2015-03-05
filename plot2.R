@@ -90,7 +90,8 @@ getDF <- function() {
 ## Function to produce Plot 2  ##
 #################################
 plot2 <- function() {
-# 	png("plot2.png")  # draw to a png file
+	png("plot2.png")  # draw to a png file
+			  # - using default size 480 x 480 pixels
 	with(getDF(), {   # read in the data
 		
 		# plot the data as a line
@@ -100,5 +101,5 @@ plot2 <- function() {
 		     xlab = "", 
 		     ylab = "Global Active Power (kilowatts)")
 	})
-# 	dev.off()
+	dev.off()
 }
