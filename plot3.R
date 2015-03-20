@@ -92,6 +92,7 @@ getDF <- function() {
 plot3 <- function() {
 	png("plot3.png")  # draw to a png file
 			  # - using default size of 480 x 480 pixels
+
 	with(getDF(), {   # read in the data
 		
 		# draw three lines and a legend
